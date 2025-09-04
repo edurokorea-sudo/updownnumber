@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>3자리 UP/DOWN 게임</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>3자리 수 맞히기 (UP/DOWN)</h1>
+
+    <section id="join-section" class="card">
+      <h2>참여하기</h2>
+      <form id="join-form">
+        <input type="text" id="name-input" placeholder="이름(아이디)" required />
+        <button type="submit">입장</button>
+      </form>
+      <p class="tip">※ 이름이 게임 내 아이디가 됩니다.</p>
+    </section>
+
+    <section id="play-section" class="card hidden">
+      <div class="row">
+        <div>
+          <h2 id="welcome"></h2>
+          <form id="guess-form">
+            <input type="number" id="guess-input" placeholder="3자리 정수 (100~999)" min="100" max="999" required />
+            <button type="submit">제출</button>
+          </form>
+          <p id="form-msg" class="msg"></p>
+        </div>
+        <div class="status">
+          <div id="game-status" class="badge">진행 중</div>
+          <button id="reset-hint" class="link" title="교사용: /reset 으로 새 게임 시작">새 게임은 /reset</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="board-section" class="card hidden">
+      <h2>제출 현황</h2>
+      <div id="board" class="board"></div>
+    </section>
+
+    <section id="log-section" class="card hidden">
+      <h2>알림</h2>
+      <ul id="log" class="log"></ul>
+    </section>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/client.js"></script>
+</body>
+</html>

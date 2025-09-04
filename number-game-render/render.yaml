@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: number-game-render
+    env: node
+    plan: free
+    buildCommand: "npm install"
+    startCommand: "npm start"
+    autoDeploy: true
+    envVars: []
